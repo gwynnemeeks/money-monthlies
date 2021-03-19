@@ -10,6 +10,11 @@
 <script>
 export default {
   props: ["annualAmount"],
+  data() {
+    return {
+      inputVal: +this.annualAmount,
+    };
+  },
 };
 </script>
 
