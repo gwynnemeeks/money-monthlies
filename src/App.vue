@@ -34,8 +34,27 @@ export default {
   data() {
     return {
       annualIncome: 0,
-      monthlyExpense: [],
+      monthlyExpenses: [],
     };
+  },
+  computed: {
+    monthlyIncome() {
+      return this.annualIncome / 12;
+    },
+    totalMonthlyExpenses() {
+      return this.monthlyExpenses.reduce((total, month) => {
+        return total + month.amount;
+      }, 0);
+    },
+    annualExpenses() {
+      return this.totalMonthlyExpenses * 12;
+    },
+    monthlyNet() {
+      return (this.monthlyIncome - this.totalMonthlyExpenses).toFixed(2);
+    },
+    annualNet() {
+      return +(this.annualIncome - this.annualExpenses).toFixed(2);
+    },
   },
 };
 </script>
