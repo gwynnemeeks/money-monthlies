@@ -25,11 +25,12 @@
 <script>
 import AnnualIncome from "./components/AnnualIncome";
 import Expenses from "./components/Expenses";
+import IncomeCard from "./components/IncomeCard";
 
 export default {
   name: "App",
 
-  components: { AnnualIncome, Expenses },
+  components: { AnnualIncome, Expenses, IncomeCard },
 
   data() {
     return {
