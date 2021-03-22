@@ -11,6 +11,12 @@
 export default {
   props: ["title", "netAmount"],
   computed: {
+    dollarClass() {
+      return {
+        "green--text": this.netAmount >= 0,
+        "red--text": this.netAmount < 0,
+      };
+    },
     displayAmount() {
       return new Intl.NumberFormat("en-US", {
         style: "currency",
