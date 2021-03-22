@@ -1,5 +1,10 @@
 <template>
-  <h3>Income Card</h3>
+  <v-card height="100%">
+    <v-card-title class="purple--text">{{ title }}</v-card-title>
+    <v-card-text>
+      <h1 class="net-amount pb-5" :class="dollarClass">{{ displayAmount }}</h1>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
