@@ -60,6 +60,15 @@ export default {
         JSON.stringify(this.monthlyExpenses)
       );
     },
+    handleExpensesRemoved(expenseToRemove) {
+      this.monthlyExpenses = this.monthlyExpenses.filter((e) => {
+        return e !== expenseToRemove;
+      });
+      localStorage.setItem(
+        "monthlyExpenses",
+        JSON.stringify(this.monthlyExpenses)
+      );
+    },
   },
   computed: {
     monthlyIncome() {
