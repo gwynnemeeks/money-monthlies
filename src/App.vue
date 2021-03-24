@@ -24,6 +24,12 @@
             @expense-removed="handleExpensesRemoved"
           />
         </v-col>
+        <v-col :cols="12" :lg="6">
+          <pie-chart
+            :expenses="monthlyExpenses"
+            :total-amount="annualExpenses"
+          />
+        </v-col>
       </v-row>
     </v-main>
   </v-app>
@@ -33,11 +39,12 @@
 import AnnualIncome from "./components/AnnualIncome";
 import Expenses from "./components/Expenses";
 import IncomeCard from "./components/IncomeCard";
+import PieChart from "./components/PieChart";
 
 export default {
   name: "App",
 
-  components: { AnnualIncome, Expenses, IncomeCard },
+  components: { AnnualIncome, Expenses, IncomeCard, PieChart },
 
   data() {
     return {
