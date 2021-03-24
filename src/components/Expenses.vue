@@ -82,7 +82,10 @@ export default {
     handleSubmit() {
       this.$emit("expense-added", { name: this.name, amount: +this.amount });
       this.name = "";
-      this.amount = "";
+      this.amount = null;
+    },
+    handleRemove(expense) {
+      this.$emit("expense-removed", expense);
     },
   },
 };
