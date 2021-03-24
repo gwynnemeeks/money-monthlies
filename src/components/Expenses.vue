@@ -78,6 +78,13 @@ export default {
       amount: null,
     };
   },
+  methods: {
+    handleSubmit() {
+      this.$emit("expense-added", { name: this.name, amount: +this.amount });
+      this.name = "";
+      this.amount = "";
+    },
+  },
 };
 </script>
 
