@@ -25,6 +25,11 @@ export default {
       inputVal: +this.annualAmount,
     };
   },
+  methods: {
+    handleChange() {
+      this.$emit("income-change", +this.inputVal);
+    },
+  },
 };
 </script>
 
