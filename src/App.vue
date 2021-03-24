@@ -4,7 +4,10 @@
       <v-row justify="center">
         <v-col :cols="12" :md="8" :lg="4">
           <h1>Money Monthlies</h1>
-          <annual-income :annualAmount="annualIncome" />
+          <annual-income
+            :annualAmount="annualIncome"
+            @income-change="handleIncomeChange"
+          />
         </v-col>
         <v-col :cols="12" :md="6" :lg="4">
           <income-card title="Monthly Net" :net-amount="monthlyNet" />
@@ -15,7 +18,11 @@
       </v-row>
       <v-row>
         <v-col :cols="12" :lg="6">
-          <expenses :expenses="monthlyExpenses" />
+          <expenses
+            :expenses="monthlyExpenses"
+            @expense-added="handleExpenseAdded"
+            @expense-removed="handleExpensesRemoved"
+          />
         </v-col>
       </v-row>
     </v-main>
