@@ -38,6 +38,29 @@ export default {
       monthlyExpenses: [],
     };
   },
+  created() {
+    const existingAnnual = localStorage.getItem("annualIncome");
+    const existingExpenses = localStorage.getItem("monthlyExpenses");
+    if (existingAnnual) {
+      this.annualIncome = parseFloat(existingAnnual);
+    }
+    if (existingExpenses) {
+      this.monthlyExpenses = JSON.parse(existingExpenses);
+    }
+  },
+  methods: {
+    handleIncomeChange(income) {
+      this.annualIncome = income;
+      localStorage.setItem("annualIncome", income);
+    },
+    handleExpenseAdded(newExpense) {
+      this.monthlyExpenses.push(newExpense);
+      localStorage.setItem(
+        "monthlyExpenses",
+        JSON.stringify(this.monthlyExpenses)
+      );
+    },
+  },
   computed: {
     monthlyIncome() {
       return this.annualIncome / 12;
