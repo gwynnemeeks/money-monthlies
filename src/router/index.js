@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Comparator from "../views/Comparator.vue"
+import Create from "../views/Create.vue"
+import Details from "../views/Details.vue"
 
 Vue.use(VueRouter)
 
