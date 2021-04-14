@@ -16,14 +16,14 @@ const routes = [
     component: Create,
   },
   {
-    path: "/meme/:memeId",
+    path: "/budget/:budgetId",
     name: "Details",
     component: Details,
   },
   {
-    path: "/feed",
-    name: "Feed",
-    component: Feed,
+    path: "/compare",
+    name: "Comparator",
+    component: Comparator,
   },
 ];
 
